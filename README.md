@@ -1,2 +1,2 @@
 # Practise
-Practise general programming
+Practising general programming. Ranging from small code snippets to large ones! 
