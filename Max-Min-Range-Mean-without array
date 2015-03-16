@@ -1,0 +1,28 @@
+#include<iostream>
+
+// Max, Min,Range, Mean without use of arrays(MIT Course question)
+
+int main()
+{
+	int i,n,max,min,sum=0,a;
+	std::cout<<"Enter number of elements \n";
+	std::cin>>n;
+	std::cout<<"Enter data:\n";
+	std::cin>>sum;
+	min=sum;
+	max=sum;
+	for(i=1;i<n;i++)
+	{
+		std::cin>>a;
+		sum +=a;
+		if(a>=max)
+		max=a;
+		if(a<=min)
+		min=a;
+
+	}
+	std::cout<<"Max is:"<<max<<std::endl;
+	std::cout<<"Min is:"<<min<<std::endl;
+	std::cout<<"Range is:"<<(max-min)<<std::endl;
+	std::cout<<"Mean is:"<<float(sum)/n<<std::endl;
+}
