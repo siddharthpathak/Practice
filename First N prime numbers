@@ -1,0 +1,31 @@
+#include<iostream>
+
+//Program to find first N prime numbers (MIT course)
+
+int main()
+{
+	int N,i,j;
+	bool isprime;
+
+	std::cout<<"Enter N\n";
+	std::cin>>N;
+    
+    for(i=2;N>0;i++)
+    {
+       isprime=true;
+       for(j=2;j*j<=i;j++)
+       {
+          if(i%j==0)
+          {
+            isprime=false;
+            break;
+          }
+       }
+       if(isprime)
+       {
+         std::cout<<i<<std::endl;
+         N--;
+       }
+    }
+    return 0;
+}
