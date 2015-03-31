@@ -1,0 +1,59 @@
+/* A substring of a string is a contiguous sequence of characters from
+the string.  For example, each of the strings "ab", "bcd", and "e" is
+a substring of "abcde". On the other hand, "cba", "ace", and "f" are
+not substrings of "abcde".
+
+The score of a string S is the number of ways in which we can select a
+non-empty substring of S such that all characters in the substring are
+the same.  If two substrings consist of the same letters but occur at
+different places in S, they are still considered different.   For
+example, the score of "aaaba" is 8: there are four occurrences of the
+substring "a", two occurrences of "aa", one occurrence of "aaa", and
+one of "b". */ 
+
+#include<stdio.h>
+
+int fact(n)
+{
+ int i,fact=0;
+  for (int i = 1; i <=n; i++)
+  {
+ 	fact=fact+i;
+  }
+    return fact;
+}
+int main()
+{
+	char s[10];
+	int i,j,len=0,value=0,temp=1,flag=0;
+	scanf("%s",s);
+	while(s[len]!='\0')
+	{
+		len++;
+	}
+	len=len-1;
+	printf(" len is %d\n", len);
+	for(i=0;i<=len;)
+	{
+		temp=1;
+		for(j=i;j<len;j++)
+		{
+
+      if(s[j]==s[j+1])
+      {
+      	temp++;
+      	printf("Temp is %d\n",temp);
+      	printf("%c \n", s[j+1]);
+
+      }
+      else
+      	break;
+  }
+      	value=value + fact(temp);
+      	i=j+1;
+      	printf("valu of i %d\n",i );
+	
+}
+	printf("Value %d\n",value );
+	return 1;
+}
