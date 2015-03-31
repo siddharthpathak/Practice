@@ -32,7 +32,6 @@ int main()
 		len++;
 	}
 	len=len-1;
-	printf(" len is %d\n", len);
 	for(i=0;i<=len;)
 	{
 		temp=1;
@@ -42,8 +41,6 @@ int main()
       if(s[j]==s[j+1])
       {
       	temp++;
-      	printf("Temp is %d\n",temp);
-      	printf("%c \n", s[j+1]);
 
       }
       else
@@ -51,9 +48,7 @@ int main()
   }
       	value=value + fact(temp);
       	i=j+1;
-      	printf("valu of i %d\n",i );
-	
+
 }
-	printf("Value %d\n",value );
 	return 1;
 }
