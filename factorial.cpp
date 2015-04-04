@@ -9,7 +9,6 @@ int main()
 	while(T--)
 	{
 		cin>>N;
-		//cout<<"Test loop"<<endl;
 		m=1;
 		i=1;
 		a[0]=1;
