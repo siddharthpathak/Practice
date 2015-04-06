@@ -37,15 +37,13 @@ int main()
 		temp=1;
 		for(j=i;j<len;j++)
 		{
-
-      if(s[j]==s[j+1])
-      {
-      	temp++;
-
-      }
-      else
-      	break;
-  }
+		  if(s[j]==s[j+1])
+      		  {
+      		    temp++;
+      		  }
+		  else
+	            break;
+  	 }
       	value=value + fact(temp);
       	i=j+1;
 
