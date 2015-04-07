@@ -1,6 +1,6 @@
 #include<iostream>
 
-//Program to find first N prime numbers (MIT course)
+//Program to find first N prime numbers. N is taken from user. (MIT course)
 
 int main()
 {
