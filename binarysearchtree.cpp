@@ -57,6 +57,14 @@ int tree_size(struct node* root)
 		return(tree_size(root->left)+1+tree_size(root->right));
   return 0;
 }
+
+int min_value(struct node* root)
+{
+	struct node* temp=root;
+	while(temp->left!=NULL)
+		temp=temp->left;
+	return temp->data;
+}
 int main()
 {
 	int x,ch;
@@ -67,7 +75,7 @@ int main()
 	root=createnode(x);
 	do
 	{
-		cout<<"1.Insert nodes\n2.Search\n3.Size\n4.Depth\n5.Minimum Value\n6.Maximum Value\n7.Inorder\n";
+		cout<<"1.Insert nodes\n2.Search\n3.Size\n4.Depth\n5.Minimum Value\n6.Inorder\n7.Postorder\n";
 		cin>>ch;
 		switch(ch)
 		{
@@ -82,19 +90,37 @@ int main()
 							}
 							break;
 			case 2:
-							cout<<"Enter node to search\n";
-							cin>>x;
-							y=search(root,x);
-							if(y)
+							{
+								cout<<"Enter node to search\n";
+								cin>>x;
+								y=search(root,x);
+								if(y)
 								cout<<"Found\n";
-							else
-								cout<<"Not found\n";
-							break;
+								else
+									cout<<"Not found\n";
+								break;
+							}
 			case 3:
-							int size=tree_size(root);
-						  cout<<"Size is:"<<size<<endl;
-						  break;
-
+							{
+								int size=tree_size(root);
+						  	cout<<"Size is:"<<size<<endl;
+						  	break;
+						  }
+			case 4:
+							{
+							  break;
+							}
+			case 5:
+							{
+								int min=min_value(root);
+								cout<<"Minimum Value:"<<min<<endl;
+								break;
+							}
+			case 6: 
+							{
+								print_tree(root);
+								break;		
+							}
 		}//switch
 	}while(ch!=8);
 	
