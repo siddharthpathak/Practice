@@ -28,13 +28,31 @@ struct node* insertnode(int x, struct node* root)
 		root->right=insertnode(x,root->right);
 	return root;
 }
-
-void print_tree(struct node* root)
+void print_preorder(struct node* root)
 {
 	if(root!=NULL)
 	{
-		print_tree(root->left);
-		print_tree(root->right);
+		cout<<root->data<<endl;
+		print_preorder(root->left);
+		print_preorder(root->right);
+	}
+}
+void print_inorder(struct node* root)
+{
+	if(root!=NULL)
+	{
+		print_inorder(root->left);
+		cout<<root->data<<endl;
+		print_inorder(root->right);
+	}
+}
+
+void print_postorder(struct node* root)
+{
+	if(root!=NULL)
+	{
+		print_postorder(root->left);
+		print_postorder(root->right);
 		cout<<root->data<<endl;
 	}
 }
@@ -75,7 +93,7 @@ int main()
 	root=createnode(x);
 	do
 	{
-		cout<<"1.Insert nodes\n2.Search\n3.Size\n4.Depth\n5.Minimum Value\n6.Inorder\n7.Postorder\n";
+		cout<<"1.Insert nodes\n2.Search\n3.Size\n4.Depth\n5.Minimum Value\n6.Inorder\n7.Preorder\n8.Postorder\n9.Exit\n";
 		cin>>ch;
 		switch(ch)
 		{
@@ -118,13 +136,24 @@ int main()
 							}
 			case 6: 
 							{
-								print_tree(root);
+								print_inorder(root);
+								break;
+							}
+			case 7: 
+							{
+								cout<<"Preorder:\n";
+								print_preorder(root);
 								break;		
 							}
+			case 8:
+							{
+								cout<<"Postorder:\n";
+								print_postorder(root);
+								break;
+							}
 		}//switch
-	}while(ch!=8);
+	}while(ch!=9);
 	
-	print_tree(root);
 	
 	
 
